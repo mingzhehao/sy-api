@@ -68,7 +68,7 @@ func (c *AppController) GetOne() {
 // @Param	id		path 	string	true		"The key for staticblock"
 // @Success 200 {object} models.App
 // @Failure 403 :id is empty
-// @router /:id [get]
+// @router /getjson/:id [get]
 func (c *AppController) GetJson() {
 	/* :id 与路由定义的:id 要统一名称 */
 	idStr := c.Ctx.Input.Param(":id")
