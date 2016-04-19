@@ -8,23 +8,33 @@ bee run -downdoc=true -gendoc=true
   调整包括，js，jquery，index.html，conf配置文件中等等
 
 
-### url 访问swagger
+### 配置fonts.googleapis.com 为国内地址
+~~~
+http://fonts.useso.com/css
+~~~
 
-~~~
-http://192.168.56.101:8085/swagger/swagger-1/
-~~~
 
 ### 配置外网ip访问（防止跨域问题）
-
 ~~~
 文件： swagger/swagger-1/index.html
 配置： url: "http://192.168.56.101:8085/docs",
 ~~~
 
-### 配置fonts.googleapis.com 为国内地址
+### url 访问swagger
 ~~~
-http://fonts.useso.com/css
+http://192.168.56.101:8085/swagger/swagger-1/
 ~~~
+
+### url访问接口两种方式 
+** restful url **
+~~~
+http://192.168.56.101:8085/v1/app/getjson/1
+~~~
+** router url **
+~~~
+http://192.168.56.101:8085/getjson/1
+~~~
+
 
 ### Post body (添加指定数据)
 ~~~
