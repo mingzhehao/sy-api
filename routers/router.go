@@ -29,4 +29,5 @@ func init() {
 		),
 	)
 	beego.AddNamespace(ns)
+	beego.Router("/getjson/:id", &controllers.AppController{}, "get:GetJson")
 }

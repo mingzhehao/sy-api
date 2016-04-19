@@ -21,6 +21,7 @@ func (c *AppController) URLMapping() {
 	c.Mapping("GetAll", c.GetAll)
 	c.Mapping("Put", c.Put)
 	c.Mapping("Delete", c.Delete)
+	c.Mapping("GetJson", c.GetJson)
 }
 
 // @Title Post
@@ -58,6 +59,33 @@ func (c *AppController) GetOne() {
 		c.Data["json"] = err.Error()
 	} else {
 		c.Data["json"] = v
+	}
+	c.ServeJSON()
+}
+
+// @Title GetJson
+// @Description get App by id (2维json)
+// @Param	id		path 	string	true		"The key for staticblock"
+// @Success 200 {object} models.App
+// @Failure 403 :id is empty
+// @router /:id [get]
+func (c *AppController) GetJson() {
+	/* :id 与路由定义的:id 要统一名称 */
+	idStr := c.Ctx.Input.Param(":id")
+	id, _ := strconv.Atoi(idStr)
+	v, err := models.GetAppById(id)
+	if err != nil {
+		c.Data["json"] = err.Error()
+	} else {
+		/** 自定义格式输出 多维json -- start **/
+		c.Data["json"] = map[string]interface{}{
+			"retcode": 0,
+			"retdata": map[string]interface{}{
+				"AppCode":    v.AppCode,
+				"AppName":    v.AppName,
+				"CreateDate": v.CreateDate},
+			"retmsg": "success"}
+		/** 自定义格式输出 多维json -- end **/
 	}
 	c.ServeJSON()
 }

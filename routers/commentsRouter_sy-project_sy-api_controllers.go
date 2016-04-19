@@ -22,6 +22,13 @@ func init() {
 
 	beego.GlobalControllerRouter["sy-project/sy-api/controllers:AppController"] = append(beego.GlobalControllerRouter["sy-project/sy-api/controllers:AppController"],
 		beego.ControllerComments{
+			"GetJson",
+			`/:id`,
+			[]string{"get"},
+			nil})
+
+	beego.GlobalControllerRouter["sy-project/sy-api/controllers:AppController"] = append(beego.GlobalControllerRouter["sy-project/sy-api/controllers:AppController"],
+		beego.ControllerComments{
 			"GetAll",
 			`/`,
 			[]string{"get"},
