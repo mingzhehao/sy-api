@@ -56,3 +56,9 @@ http://192.168.56.101:8085/getjson/1
 # Sql 数据 为 
     INSERT INTO `app` VALUES ('1', 1460111310, '100000', '神庙逃亡', null);
 
+
+# Notice Error:
+    go build github.com/astaxie/beego: /usr/local/go/pkg/tool/linux_amd64/compile: signal: killed
+    2016/06/28 10:04:29 [ERRO] ============== Build failed ===================
+    原因： 内存过低导致 free -m
+    解决： 关闭一些占时不适用且内存使用较高的应用 php-fpm
