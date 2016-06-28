@@ -41,6 +41,13 @@ func GetAppById(id int) (v *App, err error) {
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
+	if err == orm.ErrNoRows {
+		err = errors.New("no data")
+	} else if err == orm.ErrMissPK {
+		err = errors.New("no primary")
+	} else {
+		err = errors.New("error")
+	}
 	return nil, err
 }
 

@@ -56,9 +56,9 @@ func (c *AppController) GetOne() {
 	id, _ := strconv.Atoi(idStr)
 	v, err := models.GetAppById(id)
 	if err != nil {
-		c.Data["json"] = err.Error()
+		c.Data["json"] = JsonFormat(-1,err.Error(),"")
 	} else {
-		c.Data["json"] = v
+		c.Data["json"] = JsonFormat(0,"success",v)
 	}
 	c.ServeJSON()
 }
