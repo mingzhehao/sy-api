@@ -1,9 +1,3 @@
-### 启动 
-~~~
-bee run -downdoc=true -gendoc=true
-~~~
-
-
 ### 配置所有端口，如果80端口被占用，调整所有的文件中的80端口为其他设置端口
   调整包括，js，jquery，index.html，conf配置文件中等等
 
@@ -19,6 +13,20 @@ http://fonts.useso.com/css
 文件： swagger/swagger-1/index.html
 配置： url: "http://192.168.56.101:8085/docs",
 ~~~
+
+### 配置数据库信息
+~~~
+文件： database目录下
+执行： mysql -h localhost -u root --password="" < database/app.sql
+执行： mysql -h localhost -u root --password="" < database/user.sql
+~~~
+
+
+### 启动 
+~~~
+bee run -downdoc=true -gendoc=true
+~~~
+
 
 ### url 访问swagger
 ~~~
