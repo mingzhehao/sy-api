@@ -1,3 +1,5 @@
+USE sy_vendor;
+
 DROP TABLE IF EXISTS app;
 
 CREATE TABLE `app` (
