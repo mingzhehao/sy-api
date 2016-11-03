@@ -1,10 +1,10 @@
 ### 配置所有端口，如果80端口被占用，调整所有的文件中的80端口为其他设置端口
-  调整包括，js，jquery，index.html，conf配置文件中等等
+  swagger 为赋值过来的  so  调整包括，js，jquery，index.html，conf配置文件中等等
 
 
 ### 配置fonts.googleapis.com 为国内地址
 ~~~
-http://fonts.useso.com/css
+http://fonts.css.network/css
 ~~~
 
 
